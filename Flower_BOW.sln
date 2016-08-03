@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flower_BOW", "Flower_BOW\Flower_BOW.vcxproj", "{AFC5C7E7-EB23-4E19-B160-ACE157CAEAE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFC5C7E7-EB23-4E19-B160-ACE157CAEAE6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AFC5C7E7-EB23-4E19-B160-ACE157CAEAE6}.Debug|Win32.Build.0 = Debug|Win32
+		{AFC5C7E7-EB23-4E19-B160-ACE157CAEAE6}.Release|Win32.ActiveCfg = Release|Win32
+		{AFC5C7E7-EB23-4E19-B160-ACE157CAEAE6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
