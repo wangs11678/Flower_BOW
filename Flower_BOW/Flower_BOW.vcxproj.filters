@@ -18,5 +18,37 @@
     <ClCompile Include="sift_bow_svm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vocabulary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="svm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="match.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vocabulary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="svm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="match.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
