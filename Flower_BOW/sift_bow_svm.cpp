@@ -16,7 +16,6 @@
 #include "vocabulary.h"
 #include "bow.h"
 #include "svm.h"
-#include "match.h"
 
 const string kVocabularyFile("vocabulary.xml.gz");
 const string kBowImageDescriptorsDir("/bagOfWords");
@@ -25,25 +24,25 @@ const string kSvmsDirs("/svms");
 int main(int argc, char* argv[])
 {
 	// read params
-	int	wordCount(1000);
-	string method = "svm";
-	string databaseDir = "data\\train";
-	string testPicturePath = "data\\test";
-	string resultDir = "result";	
-	string detectorType("SIFT");
-	string descriptorType("SIFT");
-	string matcherType("FlannBased");
+	int	wordCount(1000); //字典大小
+	string databaseDir = "data\\train"; //训练集目录
+	string testPicturePath = "data\\test"; //测试集目录
+	string resultDir = "result"; //存放结果目录
+
+	string detectorType("SIFT"); //检测子
+	string descriptorType("SIFT"); //描述子
+	string matcherType("FlannBased"); //匹配器
 
 	cv::initModule_nonfree();
 
-	string bowImageDescriptorsDir = resultDir + kBowImageDescriptorsDir;
-	string svmsDir = resultDir + kSvmsDirs;
+	string bowImageDescriptorsDir = resultDir + kBowImageDescriptorsDir; //bow特征存放目录(result/bagOfWords)
+	string svmsDir = resultDir + kSvmsDirs; //svm分类器存放目录(result/svms)
 	MakeDir(resultDir);
 	MakeDir(bowImageDescriptorsDir);
 	MakeDir(svmsDir);
 
 	vector<string> categories;
-	GetDirList(databaseDir, &categories);
+	GetDirList(databaseDir, &categories); //求databaseDir下的目录(种类)
 	
 	Ptr<FeatureDetector> detector = FeatureDetector::create(descriptorType);
 	Ptr<DescriptorExtractor> extractor = DescriptorExtractor::create(descriptorType);
@@ -52,28 +51,13 @@ int main(int argc, char* argv[])
 	{
 		cout << "feature detector or descriptor extractor or descriptor matcher cannot be created." << endl;
 	}
+
 	Mat vocabulary;
-	string vocabularyFile = resultDir + '\\' + kVocabularyFile;
+	string vocabularyFile = resultDir + '\\' + kVocabularyFile; //vocabulary存放目录(result/vocabulary.xml.gz)
 
-	//OpenCV FileStorage类读(写)XML/YML文件
-	FileStorage fs(vocabularyFile, FileStorage::READ);
+	//生成字典
+	vocabulary = BuildVocabulary(databaseDir, categories, vocabularyFile, detector, extractor, wordCount);
 
-	if (fs.isOpened())
-	{
-		//将保存在fs对象指定yml文件下的vocabulary标签下的数据读到vocabulary矩阵
-		fs["vocabulary"] >> vocabulary;
-	} 
-	else
-	{
-		vocabulary = BuildVocabulary(databaseDir, categories, detector, extractor, wordCount);
-		//OpenCV FileStorage类(读)写XML/YML文件
-		FileStorage fs(vocabularyFile, FileStorage::WRITE);
-		if (fs.isOpened())
-		{
-			//将vocabulary矩阵保存在fs对象指定的yml文件的vocabulary标签下
-			fs << "vocabulary" << vocabulary;
-		}
-	}
 	Ptr<BOWImgDescriptorExtractor> bowExtractor = new BOWImgDescriptorExtractor(extractor, matcher);
 	bowExtractor -> setVocabulary(vocabulary);
 
@@ -87,6 +71,7 @@ int main(int argc, char* argv[])
 
 	int sum = 0;
 	int right = 0;
+	//测试
 	for (auto i = 0; i != testCategories.size(); ++i)
 	{		
 		string currentCategory = testPicturePath + '\\' + testCategories[i];
@@ -104,14 +89,8 @@ int main(int argc, char* argv[])
 			Mat testPictureDescriptor;
 			bowExtractor -> compute(image, keyPoints, testPictureDescriptor);
 			string category;
-			if (method == "svm")
-			{
-				category = ClassifyBySvm(testPictureDescriptor, samples, svmsDir);
-			}
-			else 
-			{
-				category = ClassifyByMatch(testPictureDescriptor, samples);
-			}
+
+			category = ClassifyBySvm(testPictureDescriptor, samples, svmsDir);
 
 			if(category == testCategories[i])
 			{

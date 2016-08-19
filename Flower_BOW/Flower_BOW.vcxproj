@@ -78,7 +78,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bow.cpp" />
-    <ClCompile Include="match.cpp" />
     <ClCompile Include="sift_bow_svm.cpp" />
     <ClCompile Include="svm.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -86,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bow.h" />
-    <ClInclude Include="match.h" />
     <ClInclude Include="svm.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vocabulary.h" />

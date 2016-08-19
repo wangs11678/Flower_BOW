@@ -8,7 +8,8 @@
 using namespace cv;
 
 Mat BuildVocabulary(const string& databaseDir, 
-					const vector<string>& categories, 
+					const vector<string>& flowerCategories, 
+					const string& vocabularyFile,
 					const Ptr<FeatureDetector>& detector, 
 					const Ptr<DescriptorExtractor>& extractor,
 					int wordCount);

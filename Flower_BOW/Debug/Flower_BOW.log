@@ -1,18 +1,17 @@
-﻿生成启动时间为 2016/8/4 15:28:59。
-     1>项目“F:\project\vs2012\Flower_BOW\Flower_BOW\Flower_BOW.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2016/8/17 10:11:02。
+     1>项目“F:\workspace\vs2012\Flower_BOW\Flower_BOW\Flower_BOW.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt sift_bow_svm.cpp
-         sift_bow_svm.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt vocabulary.cpp
+         vocabulary.cpp
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\vs2012\Flower_BOW\Debug\Flower_BOW.exe" /INCREMENTAL /NOLOGO opencv_core249d.lib opencv_imgproc249d.lib opencv_highgui249d.lib opencv_ml249d.lib opencv_video249d.lib opencv_features2d249d.lib opencv_calib3d249d.lib opencv_objdetect249d.lib opencv_contrib249d.lib opencv_legacy249d.lib opencv_flann249d.lib opencv_nonfree249d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\project\vs2012\Flower_BOW\Debug\Flower_BOW.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\project\vs2012\Flower_BOW\Debug\Flower_BOW.lib" /MACHINE:X86 Debug\bow.obj
-         Debug\match.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\workspace\vs2012\Flower_BOW\Debug\Flower_BOW.exe" /INCREMENTAL /NOLOGO opencv_core249d.lib opencv_imgproc249d.lib opencv_highgui249d.lib opencv_ml249d.lib opencv_video249d.lib opencv_features2d249d.lib opencv_calib3d249d.lib opencv_objdetect249d.lib opencv_contrib249d.lib opencv_legacy249d.lib opencv_flann249d.lib opencv_nonfree249d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\workspace\vs2012\Flower_BOW\Debug\Flower_BOW.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\workspace\vs2012\Flower_BOW\Debug\Flower_BOW.lib" /MACHINE:X86 Debug\bow.obj
          Debug\sift_bow_svm.obj
          Debug\svm.obj
          Debug\utils.obj
          Debug\vocabulary.obj
-         Flower_BOW.vcxproj -> F:\project\vs2012\Flower_BOW\Debug\Flower_BOW.exe
-     1>已完成生成项目“F:\project\vs2012\Flower_BOW\Flower_BOW\Flower_BOW.vcxproj”(Build 个目标)的操作。
+         Flower_BOW.vcxproj -> F:\workspace\vs2012\Flower_BOW\Debug\Flower_BOW.exe
+     1>已完成生成项目“F:\workspace\vs2012\Flower_BOW\Flower_BOW\Flower_BOW.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:04.04
+已用时间 00:00:03.68
